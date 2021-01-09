@@ -17,5 +17,106 @@
 }
 
 body {
+  height: 100vh;
+  margin: 0 auto;
   background-color: #f7dfb1;
+  font-family: 'Hind', sans-serif;
+}
+
+.main-container { 
+  margin: 16px auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  margin: 0 16%;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+ul a {
+  display: block;
+  padding: 0 1em;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 300px;
+}
+
+.my-name-logo {
+  color: black;
+  font-size: 26px;
+}
+
+.gif-me {
+  width: 300px;
+  background-color: #200101;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 32px;
+}
+
+.nav {
+  background-color: #f7dfb1;
+}
+
+.nav a {
+  color: #535353;
+}
+
+.banner {
+  display: flex;
+  width: 900px;
+  margin: 5% auto;
+}
+
+.hero-text {
+  font-size: 4em;
+  margin: 0px;
+  color: #535353;
+}
+
+.hero-text-1 {
+  margin-top: 48px;
+}
+
+.hero-text-2 {
+margin-left: 32px;
+}
+.hero-text-3 {
+margin-left: 64px;
+}
+.yellow-block {
+  background-color: #fbd531;
+  height: 8px;
+  width: 225px;
+  border-radius: 12px;
+}
+
+.yellow-block-1 {
+  margin-top: 16px;
+  margin-left: 190px;
+
+}
+
+.yellow-block-3 {
+  margin-top: 25px;
+  margin-right: 100px;
+}
+
+.under-hero-text {
+  display: flex;
+}
+
+.meet-me-text {
+  color: #535353;
 }
