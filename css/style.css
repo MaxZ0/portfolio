@@ -194,7 +194,7 @@ div.full figure:not(.expanded) { pointer-events: none; }
 }
 
 .about-bg-img {
-  background-image: url("/img/background-about.png");
+  background-image: url("./img/background-about.png");
   background-repeat: no-repeat;
   width: 100%;
   background-size: cover;
