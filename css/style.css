@@ -193,7 +193,7 @@ div.full figure:not(.expanded) { pointer-events: none; }
 
 .about-container {
   margin: -26px 16%;
-  padding-top: 10%;
+  padding-top: 22%;
 }
 
 .about-me-title {
@@ -202,7 +202,7 @@ div.full figure:not(.expanded) { pointer-events: none; }
 }
 
 .about-bg-img {
-  background-image: url("./img/background-about.png");
+  background-color: #f7dfb1;
   background-repeat: no-repeat;
   width: 100%;
   background-size: cover;
@@ -240,6 +240,10 @@ p.language{
   color: #f7dfb1;
   padding: 0px 16px;
   margin: 0px 0px;
+}
+
+.hello-sentence{
+  font-size: 2em;
 }
 
 .languange-container{
