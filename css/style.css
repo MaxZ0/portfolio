@@ -34,6 +34,10 @@ header {
   margin: 0 16%;
 }
 
+.menu-center{
+  margin-top: 6px;
+}
+
 ul {
   list-style-type: none;
   display: flex;
@@ -74,6 +78,10 @@ ul a {
   display: flex;
   width: 900px;
   margin: 10% auto;
+}
+
+.banner-width {
+  width: 90%;
 }
 
 .hero-text {
@@ -202,7 +210,7 @@ div.full figure:not(.expanded) { pointer-events: none; }
 }
 
 .pictur-me {
-  width: 100%;
+  width: 80%;
   height: 60%;
   border-radius: 7px;
   border-color: #f7dfb1;
@@ -217,9 +225,6 @@ div.full figure:not(.expanded) { pointer-events: none; }
   display: flex;
 }
 
-.about-me-card-left {
-  width: 15%;
-}
 
 .about-me-text {
   color: #f7dfb1;
@@ -266,9 +271,6 @@ p.language{
 .text-container{
   background-color: rgba(33, 1, 1, 0.7);
   border-radius: 7px;
-  margin-left: 32px;
-  padding: 16px;
-  width: 55%;
   height: 90%;
 }
 
@@ -279,7 +281,6 @@ p.language{
 .my-resently-tools {
   display: flex;
   flex-wrap: wrap;
-  width: 45%;
 }
 
 .darker-light {
@@ -301,7 +302,7 @@ p.language{
 .in-touch-title {
   color: #f7dfb1;
   font-size: 100px;
-  padding-top: 20%;
+  padding-top: 22%;
   margin: 0px;
 }
 
