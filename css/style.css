@@ -38,6 +38,11 @@ header {
   margin-top: 6px;
 }
 
+.hover:hover{
+  transition: width .5s ease, background-color .5s ease;
+  border-bottom: 2px solid #535353;
+}
+
 ul {
   list-style-type: none;
   display: flex;
@@ -228,7 +233,7 @@ div.full figure:not(.expanded) { pointer-events: none; }
 
 .about-me-text {
   color: #f7dfb1;
-  margin: 16px;
+  margin: 6px;
 }
 
 h4 {
@@ -312,6 +317,7 @@ p.language{
 
 .in-touch-text {
   color: #f7dfb1;
+  margin-bottom: 26px;
 }
 
 .say-hello-button{
@@ -320,6 +326,9 @@ p.language{
   border-radius: 7px;
   background-color: #200101;
   padding: 16px 32px;
+  text-decoration:none;
+  border: 1px solid #fbd531;
+  transition: 1s;
 }
 .say-hello-button:hover {
   background-color: #f7dfb138; transition: 1s;
