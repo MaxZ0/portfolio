@@ -345,3 +345,7 @@ footer {
   background-color: #200101;
 }
 
+.myDiv {
+  display: none;
+}
+
