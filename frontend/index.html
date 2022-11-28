@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@animxyz/core@0.4.0/dist/animxyz.min.css"
     />
+    <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -22,14 +23,14 @@
   </head>
 
   <body>
-    <div class="main-container">
+    <div class="main-container" id="home">
       <div class="nav">
         <header>
           <div
             class="xyz-in"
             xyz="fade down-100% back-5 stagger-1.5 duration-6"
           >
-            <a class="secular-one my-name-logo">Max Krohn</a>
+            <a class="secular-one my-name-logo" href="#home">Max Krohn</a>
           </div>
           <nav>
             <ul
@@ -43,11 +44,14 @@
                 <a href="#myskills" class="hind">My skills</a>
               </li>
               <li class="xyz-in hover">
-                <a href="#hireme" class="hind">Get in Touch</a>
+                <a href="#hireme" class="hind">Contact</a>
               </li>
             </ul>
           </nav>
         </header>
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
       </div>
       <div class="banner">
         <div
@@ -65,110 +69,127 @@
             <p class="hind meet-me-text">Meet Max Krohn</p>
           </div>
         </div>
-        <div class="gif" xyz="fade-100% down-100% back-5 duration-6 delay-15">
-          <img
-            class="gif-me xyz-in"
-            src="./img/me.gif"
-            alt="Auther as a pixel character"
-          />
-          <div class="gif-me-bg xyz-in"></div>
+        <div class="gif xyz-in" xyz="fade-100% down-100% back-5 duration-6 delay-15">
+          <div class="animation"></div>
+          <div class="gif-me-bg"></div>
         </div>
       </div>
     </div>
-    <div class="container-featured">
+    <div class="container-featured " id="mywork">
       <div
-        class="inner-featured-container"
+        class="inner-featured-container width-900px"
         xyz="fade-100% down-100% back-5 duration-6 delay-20"
       >
-        <h2 class="josefin-sans featured-title xyz-in" id="mywork">
-          FEATURED WORK
-        </h2>
+        <h1 class="josefin-sans featured-title xyz-in">
+          What I can do
+        </h1>
+        <div class="tech-slideshow">
+          <div class="mover-1"></div>
+          <div class="mover-2"></div>
+        </div>
         <div
           class="featured-sub-title"
           xyz="fade-100% down-100% back-5 duration-6 delay-25"
         >
-          <h3 class="hind featured-sub-title xyz-in">Websites</h3>
-          <h3 class="hind featured-sub-title sub-right xyz-in">
-            Independence work as Design
-          </h3>
-        </div>
-        <div class="work-container">
-          <div class="work-galeri-1">
-            <div id="image">
-              <figure>
-                <img
-                  class="img-size"
-                  src="./img/Bobarista-one-white-bg.png"
-                  alt="Bobarista logo"
-                />
-                <figcaption>Bobarista logo for a small company</figcaption>
-              </figure>
-              <figure>
-                <img
-                  class="img-size"
-                  src="./img/Bobarista-one.png"
-                  alt="Bobarista logo"
-                />
-                <figcaption>Bobarista logo for a small company</figcaption>
-              </figure>
-              <figure>
-                <img
-                  class="img-size"
-                  src="./img/Bobarista-one.png"
-                  alt="Bobarista logo"
-                />
-                <figcaption>Bobarista logo for a small company</figcaption>
-              </figure>
-              <figure>
-                <img
-                  class="img-size"
-                  src="./img/Bobarista-one.png"
-                  alt="Bobarista logo"
-                />
-                <figcaption>Bobarista logo for a small company</figcaption>
-              </figure>
+          <div class="card-project xyz-in">
+            <div class="animation-icon-1 grow-rotate-on-hover "></div>
+            <div class="margin-left-16">
+              <div class="card-container-icon">
+                <a
+                  href="#"
+                  class="link link-one grow-rotate-on-hover width-100"
+                >
+                  <h3
+                    class="josefin-sans featured-sub-title xyz-in font-22 margin-0"
+                  >
+                    UX / UI - Interaction Design
+                  </h3>
+                </a>
+                <p class="card-icon-p">
+                  UX design focuses on the interaction between real human users
+                  (like you and me) and everyday products and services, such as
+                  websites, apps, and even coffee machines. It's an extremely
+                  varied discipline, combining aspects of psychology, business,
+                  market research, design, and technology.
+                </p>
+              </div>
             </div>
           </div>
-
-          <div class="work-galeri-2">
-            <div id="image">
-              <figure>
-                <img
-                  class="img-size"
-                  src="./img/Bobarista-one-white-bg.png"
-                  alt="Bobarista logo"
-                />
-                <figcaption>Bobarista logo for a small company</figcaption>
-              </figure>
-              <figure>
-                <img
-                  class="img-size-2"
-                  src="./img/lann-a-roy-logo.png"
-                  alt="Lann a roy logo"
-                />
-                <figcaption>Lann A-Roy a thai resturang logo</figcaption>
-              </figure>
-              <figure>
-                <img
-                  class="img-size"
-                  src="./img/menu-lann-a-roy.png"
-                  alt="Lann a roy menu"
-                />
-                <figcaption>Lann A-Roy menu</figcaption>
-              </figure>
-              <figure>
-                <img
-                  class="img-size"
-                  src="./img/hatefull-mate-logo.png"
-                  alt="Hatefull mate logo i worket on in 2017"
-                />
-                <figcaption>Logo I worket on for a russebus 2017</figcaption>
-              </figure>
+          <div class="card-project xyz-in">
+            <div class="margin-left-16">
+              <div class="card-container-icon">
+                <a
+                  href="#"
+                  class="link link-one grow-rotate-on-hover width-100"
+                >
+                  <h3
+                    class="josefin-sans featured-sub-title xyz-in font-22 margin-0"
+                  >
+                  Frontend Developer
+                  </h3>
+                </a>
+                <p class="card-icon-p">
+                  Be able to produce interactive web solutions, both visually
+                  and technically, and implement an interactive solution from
+                  idea to finished and functioning product. Able to build
+                  relationships with graphic designers, interaction designers,
+                  programmers and content developers. Know universal design,
+                  search engine optimization and IT security.
+                </p>
+              </div>
+            </div>
+            <div class="animation-icon-2 grow-rotate-on-hover"></div>
+          </div>
+          <div class="card-project xyz-in">
+            <div class="animation-icon-3 grow-rotate-on-hover"></div>
+            <div class="margin-left-16">
+              <div class="card-container-icon">
+                <a
+                  href="#"
+                  class="link link-one grow-rotate-on-hover width-100"
+                >
+                  <h3
+                    class="josefin-sans featured-sub-title xyz-in font-22 margin-0"
+                  >
+                    Grafic Designer Freelancer
+                  </h3>
+                </a>
+                <p class="card-icon-p">
+                  Works with visual communication such as strategic design,
+                  illustration, photography, web design and animation, and is
+                  responsible for the visual design. Conceived and designed
+                  several logos for, among others, ruller bus The Hateful
+                  M8/Imperial 2017 and school commisions tickets, poster for
+                  Bjerke danserevyen 2018, Bjerke danserevyen 2022. I have made
+                  menu and logo for Lann a-roy and Bobarista.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="img_nature_wide.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="img_snow_wide.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="img_mountains_wide.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div>
+      
+      </div>
     <div class="about-bg-img">
       <div class="about-container">
         <h2 class="josefin-sans about-me-title" id="myskills">ABOUT ME</h2>
@@ -176,7 +197,7 @@
           <div class="about-me-card-left">
             <img
               class="pictur-me"
-              src="./img/me.png"
+              src=""
               alt="The auther of this website"
             />
             <div class="languange-container">
@@ -274,7 +295,7 @@
         <p class="hind email">maxkrohn@hotmail.com</p>
       </div>
     </footer>
-
+    <script type="module" src="./js/app.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>
