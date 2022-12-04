@@ -24,6 +24,15 @@ export default {
             options: {
               hotspot: true,
             },
+            fields: [
+                {
+                  name: 'link',
+                  type: 'url',
+                  options: {
+                    isHighlighted: true
+                  }
+                }
+              ]
         },
         {
             name: "tools",
@@ -37,6 +46,18 @@ export default {
                   ]
                 }
             ]
-        }
+        },
+        {
+            name: 'publishedAt',
+            title: 'Published at',
+            type: 'datetime',
+        },
+
+        {
+            name: 'body',
+            title: 'Body',
+            type: 'blockContent',
+          },
+        
     ]
 }
