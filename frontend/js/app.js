@@ -12,14 +12,12 @@ const queryProjectsGalleri = `
 *[_type == "project"]{
     "mainImage": mainImage.asset->url,
     tools,
+    slug,
+    body,
 }
 `;
 
 const url = `https://${projectID}.api.sanity.io/v2021-10-21/data/query/production?query=`;
-
-
-
-
 
 
 
@@ -42,10 +40,12 @@ async function getGalleri() {
     const projectsEl = document.querySelector('.gallery-cards');
 
     result.forEach(project => {
-     const cardEl = document.createElement('div');
+     const cardEl = document.createElement('a');
      cardEl.classList.add('flex');
      cardEl.classList.add('galleri-container');
      cardEl.classList.add('grow-rotate-on-hover');
+     console.log(project.slug.current);
+     cardEl.setAttribute('href',`/frontend/projects/${project.slug.current}.html`);
 
      const cardImgEl = document.createElement('img');
      cardImgEl.setAttribute('src', project.mainImage);
@@ -57,24 +57,35 @@ async function getGalleri() {
  
  getGalleri();
 
-
-/*     width: 256px;
-    height: 144px;
-    object-fit: cover;*/
-
-
-
-
-
-
-
-/* async function getProject() {
-    const response = await fetch(url);
-    console.log(response)
+ 
+ /* HOW TO GET PROJECT ON PAGE
+async function getProjectAbout(){
+    const response = await fetch(`${url}${encodeURI(queryProjectsGalleri)}`);
     const { result } = await response.json();
-    console.log(result);
+
+    const aboutProjectsEl = document.querySelector('.about-project-card');
+    console.log(result, "ProjectAbout");
+
+    result.forEach(project => {
+        const cardEl = document.createElement('a');
+        cardEl.classList.add('flex');
+        cardEl.classList.add('galleri-container');
+        cardEl.classList.add('grow-rotate-on-hover');
+        console.log(project.slug.current);
+   
+        const cardImgEl = document.createElement('img');
+        cardImgEl.setAttribute('src', project.mainImage);
+        cardImgEl.setAttribute('style', 'width: 208px; height: 144px; object-fit: cover;');
+        cardEl.append(cardImgEl);
+        aboutProjectsEl.append(cardEl);
+       })  
+    
+
 }
-getProject(); */
+
+getProjectAbout();
+*/
+
 
 
 
