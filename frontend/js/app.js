@@ -1,4 +1,7 @@
-const projectID = '80pp60as';
+import { sanityUrl } from "./env.js";
+import { readUrl } from "./utils.js";
+
+const urlString = readUrl();
 
 const queryAllProjects = `
 *[_type == "skill"]{
@@ -17,23 +20,20 @@ const queryProjectsGalleri = `
 }
 `;
 
-const url = `https://${projectID}.api.sanity.io/v2021-10-21/data/query/production?query=`;
 
 
 
 
 async function getProjectGalleri() {
-    const response = await fetch(`${url}${encodeURI(queryProjectsGalleri)}`);
+    const response = await fetch(`${sanityUrl}${encodeURI(queryProjectsGalleri)}`);
     const { result } = await response.json();
-
-    console.log(result, "Galleri");
 
 };
 getProjectGalleri();
 
 
 async function getGalleri() {
-    const response = await fetch(`${url}${encodeURI(queryProjectsGalleri)}`);
+    const response = await fetch(`${sanityUrl}${encodeURI(queryProjectsGalleri)}`);
     const { result } = await response.json();
 
  
@@ -44,8 +44,7 @@ async function getGalleri() {
      cardEl.classList.add('flex');
      cardEl.classList.add('galleri-container');
      cardEl.classList.add('grow-rotate-on-hover');
-     console.log(project.slug.current);
-     cardEl.setAttribute('href',`/frontend/projects/${project.slug.current}.html`);
+     cardEl.setAttribute('href',`/projects/?${project.slug.current}`);
 
      const cardImgEl = document.createElement('img');
      cardImgEl.setAttribute('src', project.mainImage);
@@ -57,44 +56,27 @@ async function getGalleri() {
  
  getGalleri();
 
- 
- /* HOW TO GET PROJECT ON PAGE
-async function getProjectAbout(){
-    const response = await fetch(`${url}${encodeURI(queryProjectsGalleri)}`);
+ /* result */
+async function renderSingelProject(){
+    const response = await fetch(`${sanityUrl}${encodeURI(queryProjectsGalleri)}`);
     const { result } = await response.json();
+    const titleEl = document.querySelector('.single-project_title');
+    titleEl.textContent = result[0].title;
+    const coverProjectEl = document.querySelector('.project_cover');
+    coverProjectEl.setAttribute('src', result[0].cover);
 
-    const aboutProjectsEl = document.querySelector('.about-project-card');
-    console.log(result, "ProjectAbout");
-
-    result.forEach(project => {
-        const cardEl = document.createElement('a');
-        cardEl.classList.add('flex');
-        cardEl.classList.add('galleri-container');
-        cardEl.classList.add('grow-rotate-on-hover');
-        console.log(project.slug.current);
-   
-        const cardImgEl = document.createElement('img');
-        cardImgEl.setAttribute('src', project.mainImage);
-        cardImgEl.setAttribute('style', 'width: 208px; height: 144px; object-fit: cover;');
-        cardEl.append(cardImgEl);
-        aboutProjectsEl.append(cardEl);
-       })  
-    
-
+    handleParagraphs(result[0].process, 'processContent');
+    handleParagraphs(result[0].coreproblem, 'core-problem');
 }
 
-getProjectAbout();
-*/
+renderSingelProject();
 
 
 
 
-async function getData() {
-    const response = await fetch(`${url}${encodeURI(queryAllProjects)}`);
+async function getAllProject() {
+    const response = await fetch(`${sanityUrl}${encodeURI(queryAllProjects)}`);
     const { result } = await response.json();
-
-    console.log(result, "getData");
-
  
     const projectsEl = document.querySelector('.slideshow-container');
 
@@ -111,6 +93,50 @@ async function getData() {
     })    
  }
  
- getData();
+
+/* minimerer api request */
+if(urlString === undefined) {
+    getAllProject();
+}
+
+const querySingleProject = `
+  *[slug.current == "${urlString}"]{
+    title,
+    "mainImage": mainImage.asset->url,
+    link,
+    "logo": logo.asset->url,
+    body,
+    publishedAt,
+  }
+`;
+
+async function getProject() {
+    const response = await fetch(`${sanityUrl}${encodeURI(querySingleProject)}`);
+    const { result } = await response.json();
+    console.log(result,"helllllooooooooo");
+
+    const coverEl = document.querySelector('.cover-project');
+    coverEl.setAttribute('src', result[0].mainImage);
+    const projectTitleEl = document.querySelector('.project-title')
+    projectTitleEl.textContent = result[0].title;
+}
+
+
+
+
+function renderSingleProject(result) {
+    const titleEl = document.querySelector('.single-project__title');
+    titleEl.textContent = result[0].title;
+    const coverProjectEl = document.querySelector('.project__cover');
+    coverProjectEl.setAttribute('src', result[0].cover);
+    
+    handleParagraphs(result[0].process, 'processContent');
+    handleParagraphs(result[0].coreproblem, 'core-problem');
+  }
+
+if (urlString !== undefined) {
+    getProject();
+}
+
 
  

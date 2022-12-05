@@ -149,7 +149,15 @@ ul a {
   box-shadow: #200101 1px 2px 8px;
 }
 
+.cover-project {
+  width: 900px;
+  height: auto;
+}
 
+.project-container {
+  width: 900px;
+    margin: 112px auto 64px auto;
+}
 
 
 
