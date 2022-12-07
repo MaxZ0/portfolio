@@ -239,6 +239,11 @@ ul a {
   width: 900px;
 }
 
+.inner-featured-container-result {
+  margin: 0 auto;
+  width: 900px;
+}
+
 .featured-title {
   color: #f7dfb1;
   font-size: 30px;
@@ -332,6 +337,9 @@ div.full figure:not(.expanded) {
   padding-top: 32px;
 }
 
+.light-color {
+  color: #f7dfb1;
+}
 
 h4 {
   color: #f7dfb1;

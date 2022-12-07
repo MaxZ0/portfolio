@@ -1,5 +1,6 @@
 import { sanityUrl } from "./env.js";
 import { readUrl } from "./utils.js";
+import { handleParagraphs } from "./utils.js";
 
 const urlString = readUrl();
 
@@ -60,9 +61,9 @@ async function getGalleri() {
 async function renderSingelProject(){
     const response = await fetch(`${sanityUrl}${encodeURI(queryProjectsGalleri)}`);
     const { result } = await response.json();
-    const titleEl = document.querySelector('.single-project_title');
+    const titleEl = document.querySelector('.project-title');
     titleEl.textContent = result[0].title;
-    const coverProjectEl = document.querySelector('.project_cover');
+    const coverProjectEl = document.querySelector('.project-cover');
     coverProjectEl.setAttribute('src', result[0].cover);
 
     handleParagraphs(result[0].process, 'processContent');
@@ -117,8 +118,13 @@ async function getProject() {
 
     const coverEl = document.querySelector('.cover-project');
     coverEl.setAttribute('src', result[0].mainImage);
-    const projectTitleEl = document.querySelector('.project-title')
+    const projectTitleEl = document.querySelector('.project-title');
+    projectTitleEl.classList.add('hind');
     projectTitleEl.textContent = result[0].title;
+
+
+    console.log(result[0].body);
+    handleParagraphs(result[0].body, "cover-p")
 }
 
 
@@ -130,8 +136,10 @@ function renderSingleProject(result) {
     const coverProjectEl = document.querySelector('.project__cover');
     coverProjectEl.setAttribute('src', result[0].cover);
     
+    
     handleParagraphs(result[0].process, 'processContent');
     handleParagraphs(result[0].coreproblem, 'core-problem');
+
   }
 
 if (urlString !== undefined) {
