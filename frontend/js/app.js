@@ -18,6 +18,7 @@ const queryProjectsGalleri = `
     tools,
     slug,
     body,
+    title,
 }
 `;
 
@@ -57,19 +58,31 @@ async function getGalleri() {
 
 getGalleri();
 
-/* result */
+
+
+
+
+
+/* result - title not working*/
 async function renderSingelProject() {
   const response = await fetch(
     `${sanityUrl}${encodeURI(queryProjectsGalleri)}`
   );
   const { result } = await response.json();
+  console.log(result);
 
   const titleEl = document.querySelector(".project-title");
-  titleEl.textContent = result[0].title;
 
   handleParagraphs(result[0].process, "processContent");
   handleParagraphs(result[0].coreproblem, "core-problem");
 }
+
+
+
+
+
+
+
 
 renderSingelProject();
 
