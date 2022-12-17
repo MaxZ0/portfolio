@@ -124,7 +124,6 @@ const querySingleProject = `
 async function getProject() {
   const response = await fetch(`${sanityUrl}${encodeURI(querySingleProject)}`);
   const { result } = await response.json();
-  console.log(result, "helllllooooooooo");
 
   const coverEl = document.querySelector(".cover-project");
   coverEl.setAttribute("src", result[0].mainImage);
