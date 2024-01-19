@@ -108,6 +108,10 @@ ul a {
 
 /*---------------------------hover-btn---------------------------*/
 
+.link-a{
+  color:#200101;
+}
+
 .link{
 	display: inline-block;
 	color: #200101;
